@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-@app.route('/temperature', methods=['POST'])
+@app.route('/temperature', methods=["GET","POST"])
 def temperature():
     zipcode = request.form['zip']
     r = requests.get('http://api.openweathermap.org/data/2.5/weather?zip='+zipcode+',us&appid=fd38d62aa4fe1a03d86eee91fcd69f6e')
